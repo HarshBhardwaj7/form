@@ -1,0 +1,92 @@
+<script>
+function   valid()
+{
+  if(f.t1.value=="")
+{
+   alert("enter  value");
+return;
+}
+if(/[0-9]/.test(f.t1.value))
+{
+  alert("this  format not accepted");
+return;
+}
+if(f.t1.value.length<5)
+{
+  alert("length  must  be  5");
+ return;
+}
+if(f.t2.value=="")
+{
+  alert("enter password");
+ return;
+}
+if(/[a-z,A-Z]/.test(f.t2.value))
+{
+  alert("enter integer");
+ return;
+}
+if(f.t3.value=="")
+{
+   alert("enter  confirm  password");
+  return;
+}
+if(f.t2.value!=f.t3.value)
+{
+   alert("password  and  confirm  must  match");
+  return;
+}
+if(f.t4.value=="")
+{
+  alert("enter  email");
+ return;
+}
+n=f.t4.value;//abc
+s=n.indexOf("@");//1  -1
+if(s==-1)
+{
+  alert("must  include @");
+ return;
+}
+s=n.indexOf(".Com");
+if(s==-1)
+{
+   alert("enter  email  properly");
+return;
+}
+if((!f.s1[0].checked)&&(!f.s1[1].checked))
+{
+  alert("check  radio");
+return;
+}
+if(!f.c1.checked)
+{
+  alert("check  term  and  condition");
+return;
+}
+if(!f.k1.selectedIndex)
+{
+  alert("select option");
+ return;
+}
+f.submit();
+}
+</script>
+<form  name=f  action=ss.html    >
+username<input  type=text  name=t1>
+password<input  type=text  name=t2><br>
+confirm<input  type=text  name=t3><br>
+Email<input  type=text  name=t4><br>
+<input  type=radio  name=s1  value=male >male
+<input  type=radio  name=s1  value=female>female
+
+<input  type=checkbox  name=c1  value=kk>check  term  and  condition
+<select  name=k1>
+	<option></option>
+	<option>asp</option>
+	<option>php</option>
+</select>
+
+<input  type=button  onclick="valid()" value=clickme  >
+
+</form>
